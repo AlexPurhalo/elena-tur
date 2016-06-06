@@ -51,3 +51,5 @@ end
 # It was originally envisioned as a plugin for Ruby on Rails, but it can function as a stand-alone templating engine.
 gem 'haml', '~> 4.0', '>= 4.0.7'
 
+# bootstrap-sass is a Sass-powered version of Bootstrap 3, ready to drop right into your Sass powered applications.
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
