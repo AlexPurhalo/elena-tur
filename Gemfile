@@ -53,3 +53,6 @@ gem 'haml', '~> 4.0', '>= 4.0.7'
 
 # bootstrap-sass is a Sass-powered version of Bootstrap 3, ready to drop right into your Sass powered applications.
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
+
+# Easy upload management for ActiveRecord
+gem 'paperclip', '~> 4.3', '>= 4.3.6'
