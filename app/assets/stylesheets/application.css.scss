@@ -15,3 +15,75 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.container {
+  max-width: 1200px;
+  font-family: "Helvetica Neue", "Arial", sans-serif
+}
+
+.header {
+  text-align: center;
+  #emblem {
+    width: 230px;
+    height: 110px;
+    margin: 3rem 0 3rem 0;
+  }
+  h1 {
+    text-align: center;
+    font-weight: 900;
+    color: #145E86;
+    margin: 4rem 0 0 0;
+    letter-spacing: 6px;
+    font-size: 4rem;
+
+  }
+  h2 {
+    font-weight: 500;
+    font-size: 3.5rem;
+    letter-spacing: 4px;
+    margin: 1rem 0 0 3rem;
+    color: #145E86;
+  }
+  .top-contact-info {
+    background-color: #2E2F30;
+    margin: 0 auto;
+    ul {
+      padding: 0 0;
+      margin: 0 0;
+      li {
+        font-weight: 600;
+        color: #CCCCCC;
+        display: inline-block;
+        margin: 0 30px 0 30px;
+      }
+    }
+  }
+}
+
+.footer {
+  background: #2E2F30;
+  color: #CCCCCC;
+  padding: 2rem 0;
+  margin: 0 auto;
+  ul {
+    li {
+      list-style: none;
+      margin: 1rem 0;
+      #life-emblem {
+        width: 25px;
+        height: 20px;
+      }
+      #kiev-star-emblem {
+        width: 20px;
+        height: 20px;
+      }
+      .footer-emblem {
+        width: 20px;
+        height: 20px;
+      }
+      span {
+        margin: 0 15px;
+      }
+    }
+  }
+}
