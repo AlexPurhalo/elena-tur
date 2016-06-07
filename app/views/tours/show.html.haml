@@ -1,6 +1,6 @@
 .row
   .col-md-12
-    = image_tag @tour.cover.url
+    = image_tag @tour.cover.url(:large)
     %h1= @tour.title
     %p= @tour.description
     %p= @tour.price
