@@ -2,7 +2,7 @@
   .col-md-12
     = image_tag @tour.cover.url(:large)
     %h1= @tour.title
-    %p= @tour.description
+    = simple_format(@tour.description)
     %p= @tour.price
     %p= @tour.date
     =link_to 'Delete', tour_path, method: :delete

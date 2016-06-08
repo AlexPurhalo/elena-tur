@@ -5,6 +5,7 @@
         = link_to tour.title, tour
       %p= tour.description
       =link_to 'Delete', tour, method: :delete
+      =link_to 'Edit', tour, edit_tour_path
     .col-md-7
       = image_tag tour.cover(:medium)
 
