@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160608142543) do
+ActiveRecord::Schema.define(version: 20160608145649) do
 
   create_table "tours", force: :cascade do |t|
     t.string   "title"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20160608142543) do
     t.integer  "cover_file_size"
     t.datetime "cover_updated_at"
     t.integer  "user_id"
+    t.string   "money"
   end
 
   create_table "users", force: :cascade do |t|
