@@ -1,6 +1,5 @@
 class ToursController < ApplicationController
   def index
-
   end
 
   def show
@@ -18,6 +17,12 @@ class ToursController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def destroy
+    @tour = Tour.find(params[:id])
+    @tour.destroy
+    redirect_to root_path
   end
 
   private
