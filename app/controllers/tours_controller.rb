@@ -1,5 +1,6 @@
 class ToursController < ApplicationController
   def index
+    @tours = Tour.order("created_at DESC")
   end
 
   def show
@@ -28,7 +29,6 @@ class ToursController < ApplicationController
   private
   def tour_params
     params.require(:tour).permit(:cover, :title, :description, :date, :price, :place)
-
   end
 end
 

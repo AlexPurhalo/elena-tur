@@ -15,6 +15,18 @@
 .container
   .row
     .col-md-3
+      %ul.display-ul
+        %li= link_to 'Home', root_path
+        %li= link_to 'New Tour', new_tour_path
+    .col-md-7
+      .pull-right
+        %ul.display-ul
+          %li= link_to 'Sign Out'
+
+
+.container
+  .row
+    .col-md-3
       =image_tag 'emblem.jpg', id: 'emblem'
     .col-md-9
       %h1

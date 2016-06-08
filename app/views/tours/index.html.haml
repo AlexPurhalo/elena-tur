@@ -1,0 +1,10 @@
+.row
+  - @tours.each do |tour|
+    .col-md-5
+      %h2
+        = link_to tour.title, tour
+      %p= tour.description
+      =link_to 'Delete', tour, method: :delete
+    .col-md-7
+      = image_tag tour.cover(:medium)
+
