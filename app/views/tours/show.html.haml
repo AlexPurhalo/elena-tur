@@ -8,4 +8,7 @@
     =link_to 'Delete', tour_path, method: :delete
     =link_to 'Назад', tours_path
     =link_to 'Edit', edit_tour_path
-
+.row
+  .col-md-12
+    =link_to(@tour) do
+      %strong= @tour.title
