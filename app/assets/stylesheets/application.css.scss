@@ -21,6 +21,12 @@
   font-family: "Helvetica Neue", "Arial", sans-serif
 }
 
+.row-list {
+  li {
+    display: inline-block;
+  }
+}
+
 .display-ul {
   text-decoration: none;
   margin: 0 0;
@@ -99,4 +105,8 @@
       }
     }
   }
+}
+
+.tours-group {
+  margin: 2rem 0 2rem 0;
 }

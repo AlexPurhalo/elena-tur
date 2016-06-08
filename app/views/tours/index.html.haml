@@ -1,20 +1,22 @@
--#.row
--#  - @tours.each do |tour|
--#    .col-md-5
--#      %h2
--#        = link_to tour.title, tour
--#      %p= truncate(simple_format(tour.description), length: 300)
--#      =link_to 'Delete', tour, method: :delete
--#      =link_to 'Edit', edit_tour_path(tour)
--#    .col-md-7
--#      = image_tag tour.cover(:medium)
-
-.row
-  - @tours.each do |tour|
+- @tours.each do |tour|
+  .row.tours-group
     .col-md-5
       = link_to(tour) do
-        %h2= truncate(tour.title, length: 100)
+        %h2= truncate(tour.title, length: 70)
       %p= truncate(simple_format(tour.description), escape: false, length: 200)
+      .row
+        .col-md-4
+          %p
+            = tour.date
+        .col-md-4
+          %p
+            = tour.place
+        .col-md-4
+          %ul.row-list.pull-left
+            %li
+              = tour.price
+            %li
+              $
       =link_to 'Delete', tour, method: :delete
       =link_to 'Edit', edit_tour_path(tour)
     .col-md-7
