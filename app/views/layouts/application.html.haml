@@ -8,9 +8,12 @@
 %body
   .header
     = render 'layouts/header'
+  %p.notice= notice
+  %p.alert= alert
   .container
     = yield
 
   .footer
     = render 'layouts/footer'
+
 

@@ -60,3 +60,5 @@ gem 'paperclip', '~> 4.3', '>= 4.3.6'
 # Forms made easy!
 gem 'simple_form', '~> 3.2', '>= 3.2.1'
 
+# Flexible authentication solution for Rails with Warden
+gem 'devise', '~> 4.1', '>= 4.1.1'

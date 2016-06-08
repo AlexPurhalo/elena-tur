@@ -14,7 +14,7 @@
     .col-md-5
       = link_to(tour) do
         %h2= truncate(tour.title, length: 100)
-      %p= truncate(simple_format(tour.description), escape: false, length: 300)
+      %p= truncate(simple_format(tour.description), escape: false, length: 200)
       =link_to 'Delete', tour, method: :delete
       =link_to 'Edit', edit_tour_path(tour)
     .col-md-7

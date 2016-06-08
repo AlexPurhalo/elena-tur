@@ -21,7 +21,10 @@
     .col-md-7
       .pull-right
         %ul.display-ul
-          %li= link_to 'Sign Out'
+          - if user_signed_in?
+            %li= link_to 'Sign Out'
+          - else
+            %li= link_to 'Login'
 
 
 .container

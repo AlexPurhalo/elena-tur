@@ -1,4 +1,6 @@
 class ToursController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
+
   def index
     @tours = Tour.order("created_at DESC")
   end
@@ -8,11 +10,11 @@ class ToursController < ApplicationController
   end
 
   def new
-    @tour = Tour.new
+    @tour = current_user.tours.build
   end
 
   def create
-    @tour = Tour.new(tour_params)
+    @tour = current_user.tours.build(tour_params)
     if @tour.save
       redirect_to @tour
     else
