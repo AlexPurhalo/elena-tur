@@ -5,10 +5,7 @@
     = simple_format(@tour.description)
     %p= @tour.price
     %p= @tour.date
-    =link_to 'Delete', tour_path, method: :delete
     =link_to 'Назад', tours_path
-    =link_to 'Edit', edit_tour_path
-.row
-  .col-md-12
-    =link_to(@tour) do
-      %strong= @tour.title
+    - if user_signed_in? && current_user.admin?
+      =link_to 'Delete', tour_path, method: :delete
+      =link_to 'Edit', edit_tour_path

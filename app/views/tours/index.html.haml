@@ -17,8 +17,9 @@
               = tour.price
             %li
               = tour.money
-      =link_to 'Delete', tour, method: :delete
-      =link_to 'Edit', edit_tour_path(tour)
+      - if user_signed_in? && current_user.admin?
+        =link_to 'Delete', tour, method: :delete
+        =link_to 'Edit', edit_tour_path(tour)
     .col-md-7
       = image_tag tour.cover(:medium)
 

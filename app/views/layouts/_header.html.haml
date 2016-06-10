@@ -14,23 +14,24 @@
 
 .container
   .row
-    .col-md-3
-      %ul.display-ul
-        %li= link_to 'Home', root_path
-        %li= link_to 'New Tour', new_tour_path
-    .col-md-7
+    .col-md-12
       .pull-right
         %ul.display-ul
-          - if user_signed_in?
-            %li= link_to 'Sign Out'
+          - if user_signed_in? && current_user.admin?
+            %li= link_to 'New Tour', new_tour_path
+            %li= link_to 'Sign Out', destroy_user_session_path, method: :delete
+          - elsif user_signed_in?
+            %li= link_to 'Settings', edit_user_registration_path
+            %li= link_to 'Sign Out', destroy_user_session_path, method: :delete
           - else
-            %li= link_to 'Login'
-
+            %li= link_to 'Sign In', new_user_session_path
+            %li= link_to 'Sign Up', new_user_registration_path
 
 .container
   .row
     .col-md-3
-      =image_tag 'emblem.jpg', id: 'emblem'
+      = link_to(root_path) do
+        = image_tag 'emblem.jpg', id: 'emblem'
     .col-md-9
       %h1
         Туристична агенція
