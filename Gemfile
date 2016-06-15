@@ -62,3 +62,15 @@ gem 'simple_form', '~> 3.2', '>= 3.2.1'
 
 # Flexible authentication solution for Rails with Warden
 gem 'devise', '~> 4.1', '>= 4.1.1'
+
+# A generalized Rack framework for multiple-provider authentication.
+gem 'omniauth', '~> 1.3', '>= 1.3.1'
+
+# A Google OAuth2 strategy for OmniAuth 1.x
+gem 'omniauth-google-oauth2'
+
+# Facebook OAuth2 Strategy for OmniAuth
+gem 'omniauth-facebook', '~> 3.0'
+
+# Unofficial VKontakte strategy for OmniAuth 1.0
+gem 'omniauth-vkontakte', '~> 1.3', '>= 1.3.7'

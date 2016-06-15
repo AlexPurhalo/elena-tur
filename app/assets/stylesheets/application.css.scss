@@ -110,3 +110,33 @@
 .tours-group {
   margin: 2rem 0 2rem 0;
 }
+
+ul.soc-auth-btns {
+  padding: 0 0;
+  margin: 0 0;
+  li {
+    display: inline-block;
+    padding: 0.8rem 2.5rem;
+    border-radius: 3px;
+    .soc-auth-image {
+      margin: 0 0.1rem 0 0;
+      width: 35px;
+      height: 35px;
+    }
+    a {
+      text-decoration: none;
+      font-weight: 600;
+      color: #F7F7F7;
+      font-size: 2.5rem;
+    }
+  }
+  li.soc-auth-li-vk {
+    background-color: #4D719D;
+  }
+  li.soc-auth-li-google {
+    background-color: #DA4835;
+  }
+  li.soc-auth-li-fb {
+    background-color: #4A6EA9;
+  }
+}
