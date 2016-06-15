@@ -1,8 +1,11 @@
 class User < ActiveRecord::Base
   has_many :tours
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [:facebook, :vkontakte, :google_oauth2]
+
+
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
