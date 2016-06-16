@@ -9,6 +9,7 @@ class ToursController < ApplicationController
 
   def show
     @tour = Tour.find(params[:id])
+    @comments = Comment.where(tour_id: @tour)
   end
 
   def new
@@ -63,12 +64,3 @@ class ToursController < ApplicationController
     params.require(:tour).permit(:cover, :title, :description, :date, :price, :money, :place)
   end
 end
-
-
-
-
-
-
-
-
-

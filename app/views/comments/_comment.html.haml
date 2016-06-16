@@ -1,0 +1,8 @@
+%ul
+  %li
+    %ul
+      - if comment.user
+        %li= comment.user.name
+        %li= comment.content
+        - if user_signed_in? && current_user.admin?
+          %li= link_to 'Delete', [comment.tour, comment], method: :delete

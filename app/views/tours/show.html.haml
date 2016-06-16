@@ -9,3 +9,34 @@
     - if user_signed_in? && current_user.admin?
       =link_to 'Delete', tour_path, method: :delete
       =link_to 'Edit', edit_tour_path
+
+.row
+  .comment-section
+    .col-md-12
+      %h2 Have the questions?
+      - if user_signed_in?
+        .comment-form
+          = render 'comments/form'
+      - else
+        .sign-in-proposition
+          %p
+            = link_to 'Sign In', new_user_session_path
+            |
+            = link_to 'Sign Up', new_user_registration_path
+            manually
+          %p  or with
+          %p
+            = link_to(user_omniauth_authorize_path(:vkontakte)) do
+              = image_tag 'soc-auth-vk.png', width: '20px'
+            |
+            = link_to(user_omniauth_authorize_path(:google_oauth2)) do
+              = image_tag 'soc-auth-google.png', width: '20px'
+            |
+            = link_to(user_omniauth_authorize_path(:facebook)) do
+              = image_tag 'soc-auth-fb.png', width: '20px'
+          %p
+            to left a question
+      .comments-count
+        = pluralize(@tour.comments.count, 'Comment')
+      .comments-list
+        = render @tour.comments
