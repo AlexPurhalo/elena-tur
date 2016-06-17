@@ -1,7 +1,6 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!, only: [:create, :destroy]
   before_action :edit_permission, only: [:destroy]
-
   def create
     @tour = Tour.find(params[:tour_id])
     @comment = Comment.create(comment_params)
@@ -22,17 +21,17 @@ class CommentsController < ApplicationController
     redirect_to @tour
   end
 
-  def edit_permission
-    @tour = Tour.find(params[:tour_id])
-    @comment = @tour.comments.find(params[:id])
 
-    unless @tour.user == current_user
-      flash[:notice] = 'Only administration can rule by comments'
-      redirect_to @tour
-    end
-  end
   private
   def comment_params
     params.require(:comment).permit(:content)
+  end
+  def edit_permission
+    @tour = Tour.find(params[:tour_id])
+
+    unless current_user.admin?
+      flash[:notice] = 'Only administration can rule by posts'
+      redirect_to @tour
+    end
   end
 end

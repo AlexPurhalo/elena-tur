@@ -1,0 +1,4 @@
+.col-md-6
+  = image_tag image.content.url(:medium), class: 'tour-image'
+  - if user_signed_in? && current_user.admin?
+    = link_to 'Delete', [image.tour, image], method: :delete

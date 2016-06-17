@@ -1,6 +1,6 @@
 class ToursController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :create_permission, only: [:new, :create]
+  before_action :create_permission, only: [:new]
   before_action :edit_permission, only: [:edit, :update, :destroy]
 
   def index
@@ -10,10 +10,11 @@ class ToursController < ApplicationController
   def show
     @tour = Tour.find(params[:id])
     @comments = Comment.where(tour_id: @tour).paginate(page: params[:page], per_page: 10)
+    @images = Image.where(tour_id: @tour).paginate(page: params[:page], per_page: 4)
   end
 
   def new
-    @tour = current_user.tours.build
+    @new_tour = current_user.tours.build
   end
 
   def create
@@ -22,6 +23,11 @@ class ToursController < ApplicationController
       redirect_to @tour
     else
       render 'new'
+    end
+
+    unless current_user.admin?
+      flash[:notice] = 'Only administration can add posts'
+      redirect_to root_path
     end
   end
 
@@ -44,7 +50,7 @@ class ToursController < ApplicationController
   def create_permission
     @tour = current_user.tours.build
 
-    unless @tour.user.admin?
+    unless current_user.admin?
       flash[:notice] = 'Only administration can add posts'
       redirect_to root_path
     end
@@ -53,7 +59,7 @@ class ToursController < ApplicationController
   def edit_permission
     @tour = Tour.find(params[:id])
 
-    unless @tour.user == current_user
+    unless current_user.admin?
       flash[:notice] = 'Only administration can rule by posts'
       redirect_to @tour
     end

@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_many :tours
   has_many :comments
+  has_many :images
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,

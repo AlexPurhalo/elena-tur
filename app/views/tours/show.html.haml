@@ -1,6 +1,6 @@
 .row
-  .col-md-12
-    = image_tag @tour.cover.url(:large)
+  .col-md-6
+    = image_tag @tour.cover.url(:large), class: 'tour-cover'
     %h1= @tour.title
     = simple_format(@tour.description)
     %p= @tour.price
@@ -9,6 +9,15 @@
     - if user_signed_in? && current_user.admin?
       =link_to 'Delete', tour_path, method: :delete
       =link_to 'Edit', edit_tour_path
+
+  .col-md-6
+    .row.tour-images
+      = render @images
+    .row
+      .col-md-12
+        = will_paginate @images
+        - if user_signed_in? && current_user.admin?
+          = render 'images/form'
 
 .row
   .comment-section
