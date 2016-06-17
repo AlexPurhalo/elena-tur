@@ -39,4 +39,6 @@
       .comments-count
         = pluralize(@tour.comments.count, 'Comment')
       .comments-list
-        = render @tour.comments
+        = render @comments
+        = will_paginate @comments
+

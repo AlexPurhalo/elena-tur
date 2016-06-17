@@ -4,12 +4,12 @@ class ToursController < ApplicationController
   before_action :edit_permission, only: [:edit, :update, :destroy]
 
   def index
-    @tours = Tour.order("created_at DESC")
+    @tours = Tour.order("created_at DESC").paginate(page: params[:page], per_page: 7)
   end
 
   def show
     @tour = Tour.find(params[:id])
-    @comments = Comment.where(tour_id: @tour)
+    @comments = Comment.where(tour_id: @tour).paginate(page: params[:page], per_page: 10)
   end
 
   def new

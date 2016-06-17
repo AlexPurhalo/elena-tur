@@ -74,3 +74,7 @@ gem 'omniauth-facebook', '~> 3.0'
 
 # Unofficial VKontakte strategy for OmniAuth 1.0
 gem 'omniauth-vkontakte', '~> 1.3', '>= 1.3.7'
+
+# will_paginate provides a simple API for performing paginated queries with Active Record, DataMapper and Sequel,
+# and includes helpers for rendering pagination links in Rails, Sinatra and Merb web apps.
+gem 'will_paginate', '~> 3.1'
