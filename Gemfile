@@ -89,3 +89,6 @@ gem 'omniauth-vkontakte', '~> 1.3', '>= 1.3.7'
 # will_paginate provides a simple API for performing paginated queries with Active Record, DataMapper and Sequel,
 # and includes helpers for rendering pagination links in Rails, Sinatra and Merb web apps.
 gem 'will_paginate', '~> 3.1'
+
+# The official AWS SDK for Ruby. Provides both resource oriented interfaces and API clients for AWS services.
+gem 'aws-sdk', '< 2.0'
