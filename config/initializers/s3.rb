@@ -1,7 +1,7 @@
 if Rails.env == "production"
   # set credentials from ENV hash
-  S3_CREDENTIALS = { access_key_id: ENV['AKIAI7VDKMUPXYEMZZUA'],
-                     secret_access_key: ENV['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'],
+  S3_CREDENTIALS = { access_key_id: ENV['S3_KEY'],
+                     secret_access_key: ENV['S3_SECRET'],
                      bucket: 'elena-tour'}
 else
   # get credentials from YML file

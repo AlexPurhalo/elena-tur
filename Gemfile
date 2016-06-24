@@ -92,3 +92,6 @@ gem 'will_paginate', '~> 3.1'
 
 # The official AWS SDK for Ruby. Provides both resource oriented interfaces and API clients for AWS services.
 gem 'aws-sdk', '< 2.0'
+
+# Simple, Heroku-friendly Rails app configuration using ENV and a single YAML file
+gem 'figaro', '~> 1.1', '>= 1.1.1'
