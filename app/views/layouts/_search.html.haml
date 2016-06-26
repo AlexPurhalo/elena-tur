@@ -1,0 +1,5 @@
+.categories
+  %ul
+    %li= link_to 'All tours', root_path
+    - Category.all.each do |category|
+      %li= link_to category.name, tours_path(category: category.name)

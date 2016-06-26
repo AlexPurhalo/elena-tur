@@ -4,7 +4,12 @@ class ToursController < ApplicationController
   before_action :edit_permission, only: [:edit, :update, :destroy]
 
   def index
-    @tours = Tour.order("created_at DESC").paginate(page: params[:page], per_page: 7)
+    if params[:category].blank?
+      @tours = Tour.order("created_at DESC").paginate(page: params[:page], per_page: 7)
+    else
+      @category_id = Category.find_by(name: params[:category]).id
+      @tours = Tour.where(category_id: @category_id).order("created_at DESC").paginate(page: params[:page], per_page: 7)
+    end
   end
 
   def show
@@ -67,6 +72,6 @@ class ToursController < ApplicationController
 
   private
   def tour_params
-    params.require(:tour).permit(:cover, :title, :description, :date, :price, :money, :place)
+    params.require(:tour).permit(:cover, :title, :description, :date, :price, :money, :place, :category_id)
   end
 end

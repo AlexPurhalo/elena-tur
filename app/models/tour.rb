@@ -2,6 +2,7 @@ class Tour < ActiveRecord::Base
   belongs_to :user
   has_many :comments, dependent: :destroy
   has_many :images, dependent: :destroy
+  belongs_to :category
   validates :cover, :title, :description, presence: true
   has_attached_file :cover,
                     styles: { medium: '548x372#', thumb: '100x100>', large: '566x383#' },
