@@ -3,6 +3,14 @@ class Tour < ActiveRecord::Base
   has_many :comments, dependent: :destroy
   has_many :images, dependent: :destroy
   belongs_to :category
+
+  def self.search(search)
+    if search
+      where(["title LIKE ?", "%#{search}%"])
+    else
+      all
+    end
+  end
   validates :cover, :title, :description, presence: true
   has_attached_file :cover,
                     styles: { medium: '548x372#', thumb: '100x100>', large: '566x383#' },

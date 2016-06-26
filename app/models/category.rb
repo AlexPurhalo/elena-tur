@@ -1,3 +1,3 @@
 class Category < ActiveRecord::Base
-  has_many :tours 
+  has_many :tours
 end

@@ -5,10 +5,10 @@ class ToursController < ApplicationController
 
   def index
     if params[:category].blank?
-      @tours = Tour.order("created_at DESC").paginate(page: params[:page], per_page: 7)
+      @tours = Tour.order("created_at DESC").paginate(page: params[:page], per_page: 7).search(params[:search])
     else
       @category_id = Category.find_by(name: params[:category]).id
-      @tours = Tour.where(category_id: @category_id).order("created_at DESC").paginate(page: params[:page], per_page: 7)
+      @tours = Tour.where(category_id: @category_id).order("created_at DESC").paginate(page: params[:page], per_page: 7).where(["title LIKE ?", "%#{params[:search]}%"])
     end
   end
 
