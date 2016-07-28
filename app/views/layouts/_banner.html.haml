@@ -1,0 +1,26 @@
+- if current_page?(new_user_registration_path)
+  #banner.registration-banner
+    .banner-description
+      %h2 Створіть профіль
+      %p щоб залишити коментар
+      %p або
+      %h3= link_to 'Увійдіть', new_user_session_path
+- elsif current_page?(new_user_session_path)
+  #banner.login-banner
+    .banner-description
+      %h2 Увійдіть
+      %p щоб залишити коментар
+      %p або
+      %h3= link_to 'Створіть профіль', new_user_registration_path
+- else
+  #banner.home-banner
+    .banner-description
+      %h1
+        Туристична Агенція
+      %h2
+        Шохалевич Олени
+      .container
+        .tour-tags.row
+          = link_to 'Усі пропозиції', root_path
+          - Category.all.each do |category|
+            = link_to category.name, tours_path(category: category.name)

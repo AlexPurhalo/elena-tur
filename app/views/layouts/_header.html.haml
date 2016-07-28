@@ -1,45 +1,39 @@
-.row.top-contact-info
-  .col-md-6
-    %ul
-      %li
-        kievstar: 067-50-95-100
-      %li
-        life: 063-36-27-885
-  .col-md-6
-    %ul
-      %li
-        email: Lena_tour@mail.ru
-      %li
-        т./ф. 04565-65388
-
-.container
-  .row
-    .col-md-12
-      .pull-right
-        %ul.display-ul
-          - if user_signed_in? && current_user.admin?
-            %li= link_to 'New Tour', new_tour_path
-            %li= link_to 'Sign Out', destroy_user_session_path, method: :delete
-          - elsif user_signed_in?
-
-            %li= current_user.email
-            %li
-              = current_user.first_name
-              = current_user.last_name
-            %li= image_tag current_user.image
-            %li= link_to 'Settings', edit_user_registration_path
-            %li= link_to 'Sign Out', destroy_user_session_path, method: :delete
-          - else
-            %li= link_to 'Sign In', new_user_session_path
-            %li= link_to 'Sign Up', new_user_registration_path
-
-.container
-  .row
-    .col-md-3
+%nav.navbar.navbar-default
+  .container-fluid
+    .navbar-header
       = link_to(root_path) do
-        = image_tag 'emblem.jpg', id: 'emblem'
-    .col-md-9
-      %h1
-        Туристична агенція
-      %h2
-        Шохалевич Олени
+        = image_tag 'project-emblem.png', id: 'project-emblem', class: 'navbar-brand'
+    %div
+      %ul.nav.navbar-nav
+        %li
+          - if current_page?(root_path)
+            = link_to 'Головна', root_path, class: 'activated'
+          - else
+            = link_to 'Головна', root_path
+        %li
+          %a
+            Контакти
+
+      %ul.nav.navbar-nav.navbar-right
+        - if user_signed_in? && current_user.admin?
+          %li= link_to 'Створити', new_tour_path
+          %li= link_to 'Вийти', destroy_user_session_path, method: :delete
+        - elsif user_signed_in?
+          %li= image_tag current_user.image, class: 'user-image-in-header'
+          %li= link_to 'Налаштування', edit_user_registration_path
+          %li= link_to 'Вийти', destroy_user_session_path, method: :delete
+        - else
+          %li= link_to 'Увійти', new_user_session_path
+          %li
+            = link_to(user_omniauth_authorize_path(:facebook)) do
+              = image_tag 'soc-auth-fb.png', class: 'soc-auth-image'
+          %li
+            = link_to(user_omniauth_authorize_path(:vkontakte)) do
+              = image_tag 'soc-auth-vk.png', class: 'soc-auth-image'
+
+      %form.navbar-form.navbar-left
+        - if current_page?(root_path)
+          = form_tag tours_path, method: 'get' do
+            = text_field_tag :search, params[:search], class: 'form-control', placeholder: 'Введіть назву тура'
+            = submit_tag 'Пошук', class: 'btn btn-default'
+

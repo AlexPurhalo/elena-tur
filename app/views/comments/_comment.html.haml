@@ -1,7 +1,14 @@
-%ul
-  %li
-    %ul
-      %li= comment.user.name
-      %li= comment.content
-      - if user_signed_in? && current_user.admin?
-        %li= link_to 'Delete', [comment.tour, comment], method: :delete
+%li
+  .row
+    .col-md-8.comment-content
+      = comment.content
+    .col-md-2.comment-author-and-date
+      %h5= comment.user.name
+      %p= comment.created_at.strftime("%Y-%m-%d")
+    .col-md-2
+      - if comment.user.image != nil
+        = image_tag comment.user.image, class: 'user-avatar'
+      - else
+        = image_tag('unknown-user.png', class: 'user-avatar')
+  - if user_signed_in? && current_user.admin?
+    %li= link_to 'Delete', [comment.tour, comment], method: :delete

@@ -1,3 +1,7 @@
+$white: #FFFFFF;
+$highlight: #EE7964;
+$dark: #2C3135;
+$light: #EDEFF5;
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -13,72 +17,207 @@
  *= require_tree .
  *= require_self
  */
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+body {
+  font-family: Arial, sans-serif;
+  background: rgba(255, 40, 86, 0.03);
+}
+
 .container {
   max-width: 1400px;
-  font-family: "Helvetica Neue", "Arial", sans-serif
 }
 
-.row-list {
-  li {
-    display: inline-block;
-  }
+.container-fluid {
+  background-color: rgba(255, 40, 86, 0.03);
 }
 
-.display-ul {
-  text-decoration: none;
-  margin: 0 0;
-  li {
-    display: inline-block;
-    margin: 1rem 1rem 0 1rem;
-    font-weight: 700;
-    a {
-      color: #ff2856;
-    }
-  }
-}
-
-.header {
+#banner {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
   text-align: center;
-  #emblem {
-    width: 230px;
-    height: 110px;
-    margin: 3rem 0 3rem 0;
-  }
-  h1 {
-    text-align: center;
-    font-weight: 900;
-    color: #145E86;
-    margin: 4rem 0 0 0;
-    letter-spacing: 6px;
-    font-size: 4rem;
+}
 
+.home-banner {
+  background-image: image-url("home-banner.jpg");
+}
+
+.registration-banner {
+  background-image: image-url("registration-banner.jpg");
+
+}
+
+.login-banner {
+  background-image: image-url("login-banner.jpg");
+
+}
+
+.banner-description {
+  margin: 0 auto;
+  padding: 6rem 0 4rem;
+  h1 {
+    margin: 0;
+    font-size: 6rem;
+    font-weight: 700;
+    letter-spacing: 8px;
+    color: $white;
   }
   h2 {
-    font-weight: 500;
-    font-size: 3.5rem;
-    letter-spacing: 4px;
-    margin: 1rem 0 0 3rem;
-    color: #145E86;
+    margin: 3rem 0;
+    font-size: 5rem;
+    font-weight: 700;
+    letter-spacing: 5px;
+    color: $white;
   }
-  .top-contact-info {
-    background-color: #2E2F30;
-    margin: 0 auto;
-    ul {
-      padding: 0 0;
-      margin: 0 0;
-      li {
-        font-weight: 600;
-        color: #CCCCCC;
-        display: inline-block;
-        margin: 0 30px 0 30px;
-      }
+  h3 {
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: $white;
+  }
+  p {
+    color: $white;
+    font-size: 3rem;
+    font-weight: 500;
+  }
+  a {
+    color: $white;
+  }
+  @media (max-width: 490px) {
+    h1 {
+      font-size: 2rem;
+    }
+    h2 {
+      font-size: 2rem;
+    }
+  }
+  .tour-tags{
+    margin: 3rem 0 0;
+    text-align: center;
+    a{
+      display: inline-block;
+      width: 170px;
+      margin: 5px 15px;
+      padding: 7.5px 0;
+      border-radius: 5px;
+      color: $white;
+      background-color: #5699e8;
+      font-size: 1.125em;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    a:hover{
+      box-shadow: 0 0 10px #efeeff;
+      background-color: #239dda;
+    }
+  }
+
+}
+
+nav {
+  background-color: red;
+}
+
+.navbar {
+  #project-emblem {
+    margin: 0 3rem;
+    width: 120px;
+    height: 80px;
+  }
+
+  ul {
+    padding: 1rem 0;
+    margin: 0 3rem 0;
+    li {
+      font-size: 18px;
+    }
+  }
+  form {
+    padding: 1.5rem 0;
+
+  }
+  background-color: $white;
+  margin-bottom: 0;
+  a {
+    padding: 5rem 0;
+  }
+  .activated {
+    font-size: 2.2rem;
+    color: rgba(0, 0, 0, 0.63);
+    a {
+      padding: 1.5rem 4rem;
     }
   }
 }
 
+.soc-auth-image {
+  width: 25px;
+  height: 25px;
+}
+
+
+
+//.row-list {
+//  li {
+//    display: inline-block;
+//  }
+//}
+//
+//.display-ul {
+//  text-decoration: none;
+//  margin: 0 0;
+//  li {
+//    display: inline-block;
+//    margin: 1rem 1rem 0 1rem;
+//    font-weight: 700;
+//    a {
+//      color: #ff2856;
+//    }
+//  }
+//}
+//
+//.header {
+//  text-align: center;
+//  #emblem {
+//    width: 230px;
+//    height: 110px;
+//    margin: 3rem 0 3rem 0;
+//  }
+//  h1 {
+//    text-align: center;
+//    font-weight: 900;
+//    color: #145E86;
+//    margin: 4rem 0 0 0;
+//    letter-spacing: 6px;
+//    font-size: 4rem;
+//
+//  }
+//  h2 {
+//    font-weight: 500;
+//    font-size: 3.5rem;
+//    letter-spacing: 4px;
+//    margin: 1rem 0 0 3rem;
+//    color: #145E86;
+//  }
+//  .top-contact-info {
+//    background-color: #2E2F30;
+//    margin: 0 auto;
+//    ul {
+//      padding: 0 0;
+//      margin: 0 0;
+//      li {
+//        font-weight: 600;
+//        color: #CCCCCC;
+//        display: inline-block;
+//        margin: 0 30px 0 30px;
+//      }
+//    }
+//  }
+//}
+//
 .footer {
   background: #2E2F30;
   color: #CCCCCC;
@@ -106,61 +245,431 @@
     }
   }
 }
+//
+//.tours-group {
+//  margin: 2rem 0 2rem 0;
+//}
+//
+//ul.soc-auth-btns {
+//  padding: 0 0;
+//  margin: 0 0;
+//  li {
+//    display: inline-block;
+//    padding: 0.8rem 2.5rem;
+//    border-radius: 3px;
+//    .soc-auth-image {
+//      margin: 0 0.1rem 0 0;
+//      width: 35px;
+//      height: 35px;
+//    }
+//    a {
+//      text-decoration: none;
+//      font-weight: 600;
+//      color: #F7F7F7;
+//      font-size: 2.5rem;
+//    }
+//  }
+//  li.soc-auth-li-vk {
+//    background-color: #4D719D;
+//  }
+//  li.soc-auth-li-google {
+//    background-color: #DA4835;
+//  }
+//  li.soc-auth-li-fb {
+//    background-color: #4A6EA9;
+//  }
+//}
+//
 
-.tours-group {
-  margin: 2rem 0 2rem 0;
-}
 
-ul.soc-auth-btns {
-  padding: 0 0;
-  margin: 0 0;
-  li {
-    display: inline-block;
-    padding: 0.8rem 2.5rem;
-    border-radius: 3px;
-    .soc-auth-image {
-      margin: 0 0.1rem 0 0;
-      width: 35px;
-      height: 35px;
+.tours {
+  padding: 0;
+  border-radius: 10px 0 0 0;
+  color: rgba(0, 0, 0, 0.79);
+  background-color: rgba(182, 236, 252, 0.08);
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  margin: 4rem 0;
+  h2 {
+    font-size: 35px;
+    color: #464646;
+  }
+  a {
+    color: $white;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+  p {
+    font-size: 18px;
+  }
+  .tour-footer {
+
+    .tour-footer-item {
+
     }
-    a {
-      text-decoration: none;
-      font-weight: 600;
-      color: #F7F7F7;
-      font-size: 2.5rem;
+    .tour-date {
+      p {
+        padding: 0.8rem 0.9rem;
+        border-radius: 3px;
+        color: $white;
+        font-weight: 700;
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.34);
+      }
+      p:hover {
+        background-color: rgba(255, 40, 86, 0.84);
+      }
+
+    }
+    .tour-place {
+      padding: 0.8rem 0.9rem;
+      border-radius: 3px;
+      text-align: center;
+      font-size: 22px;
+      a {
+        color: #464646;
+
+      }
+    }
+    .tour-price {
+      p {
+        padding: 0.8rem 0.9rem;
+        background-color: rgba(255, 40, 86, 0.84);
+        border-radius: 3px;
+        color: $white;
+        font-weight: 700;
+        text-align: center;
+      }
+      p:hover {
+        background-color: rgba(0, 0, 0, 0.34);
+      }
     }
   }
-  li.soc-auth-li-vk {
-    background-color: #4D719D;
-  }
-  li.soc-auth-li-google {
-    background-color: #DA4835;
-  }
-  li.soc-auth-li-fb {
-    background-color: #4A6EA9;
-  }
-}
-
-.tour-cover {
-  width: 543px;
-  height: 372px;
-  margin: 0.5rem 0.5rem;
-}
-
-@media (max-width: 1199px) {
   .tour-cover {
-    width: 454px;
-    height: 312px;
+    width: 543px;
+    height: 320px;
+    margin: 0.5rem 0.5rem;
+    opacity: 0.8;
   }
+  .tour-cover:hover {
+    opacity: 1;
+  }
+
+  @media (max-width: 1199px) {
+    .tour-cover {
+      width: 454px;
+      height: 312px;
+    }
+  }
+
+  @media (max-width: 490px) {
+    .tour-cover {
+      width: 228px;
+      height: 150px;
+    }
+  }
+}
+
+
+
+.one-tour-page {
+  background-color: rgba(182, 236, 252, 0.08);
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  padding: 1rem 2.5rem 0 3rem;
+  margin: 5rem 0;
+  h1 {
+    font-size: 4rem;
+  }
+
+  .one-tour-cover {
+    width: 529px;
+    height: 372px;
+    border: 1px rgba(0, 0, 0, 0.29) solid;
+    border-radius: 2px;
+  }
+
+  .tour-images {
+    .col-md-6 {
+      padding: 0 0;
+    }
+  }
+
   .tour-image {
-    width: 228px;
-    height: 150px;
+    width: 275px;
+    height: 178px;
+    border: 1px rgba(0, 0, 0, 0.29) solid;
+    margin: 0 0 1.5rem 0;
+    opacity: 0.8;
+    border-radius: 2px;
+  }
+
+  .tour-image:hover {
+    opacity: 1;
+    border: 1px #ff2856 solid;
+  }
+
+
+  @media (max-width: 1199px) {
+    .one-tour-cover {
+      width: 454px;
+      height: 312px;
+    }
+    .tour-image {
+      width: 228px;
+      height: 150px;
+      margin: 0 0 1rem 2rem;
+    }
+  }
+  @media (max-width: 490px) {
+    .one-tour-cover {
+      width: 228px;
+      height: 150px;
+    }
+  }
+  .one-tour-additional-info {
+    .first-column {
+      text-align: left;
+      font-size: 2rem;
+      margin: 1.5rem 0;
+    }
+    .second-column {
+      text-align: center;
+      font-size: 3rem;
+      letter-spacing: 20px;
+      margin: 0.9rem 0 3rem;
+      color: rgba(70, 70, 70, 0.64);
+      text-shadow: 0 0 0 #464646, 0 0 1px #464646;
+    }
+    .third-column {
+      text-align: right;
+      font-size: 2rem;
+      margin: 1.5rem 0;
+    }
+  }
+  .one-tour-title {
+    color: rgba(2, 4, 18, 0.57);
+    margin: 6rem 0 1rem;
+    font-size: 3.5rem;
+  }
+  .description {
+    margin: 2rem 0;
+    font-size: 2rem;
   }
 }
 
-@media (max-width: 490px) {
-  .tour-cover {
-    width: 228px;
-    height: 150px;
+.comment-section {
+ h2 {
+   color: #1987be;
+   font-size: 3rem;
   }
+  .form-control {
+    height: 150px;
+    font-size: 2rem;
+  }
+  .btn {
+    font-size: 2rem;
+  }
+  .empty-comment-list {
+    font-size: 2rem;
+  }
+  .sign-in-proposition {
+    font-size: 2.1rem;
+    margin: 1rem 0 1rem 3rem;
+  }
+  ul {
+    margin: 3rem 0 2rem 1rem;
+    padding: 2rem 2rem;
+    background: #fff;
+    border: 1px rgba(128, 128, 128, 0.49) solid;
+    border-radius: 3.5px;
+    li {
+      padding: 0.5rem 0.5rem;
+      list-style: none;
+      margin-bottom: 1.5rem;
+      background-color: rgba(255, 40, 86, 0.02);
+      border-radius: 3.5px;
+      h5 {
+        text-align: right;
+        margin: 0 0;
+      }
+      p {
+        text-align: right;
+      }
+
+    }
+  }
+}
+
+.user-avatar {
+  width: 70px;
+  height: 70px;
+}
+
+.pagination:before,
+.pagination:after {
+  content: “ “;
+  display: table;
+}
+
+.pag {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.pagination:after {
+  clear: both;
+}
+
+.pagination {
+  text-align: center;
+  margin: 0 0 4rem 0;
+  a, .previous_page, .current, .next_page {
+    padding: 1.5rem 2rem;
+    margin: 0 .25rem;
+    border-radius: .15rem;
+    line-height: 20px;
+    text-decoration: none;
+    background-color: $light;
+    font-weight: 700;
+    font-size: 1.2rem;
+    font-style: normal;
+    color: $dark;
+    box-shadow: 0 0 2px rgba(0,0,0,0.5);
+    &:hover {
+      background: #239dda;
+      color: $white;
+    }
+  }
+  .disabled {
+    color: #C0C0C0;
+    &:hover {
+      color: #C0C0C0;
+    }
+  }
+  .current {
+    background: #239dda;
+    color: $white;
+  }
+}
+
+
+
+
+// one tour page
+
+.img-paginate {
+  .pagination:before,
+  .pagination:after {
+    content: “ “;
+    display: table;
+  }
+
+  .pagination:after {
+    clear: both;
+  }
+
+  .pagination {
+    text-align: center;
+    margin: 2rem 0 4rem 0;
+    a, .previous_page, .current, .next_page {
+      padding: 0.8rem 1.2rem;
+      margin: 0 .25rem;
+      border-radius: .15rem;
+      line-height: 20px;
+      text-decoration: none;
+      background-color: $light;;
+      font-weight: 700;
+      font-size: 1.2rem;
+      font-style: normal;
+      color: $dark;
+      &:hover {
+        background: #239dda;
+        color: $white;
+      }
+    }
+    .disabled {
+      color: #C0C0C0;
+      &:hover {
+        color: #C0C0C0;
+      }
+    }
+    .current {
+      background: rgba(0, 0, 0, 0.34);
+      color: $white;
+    }
+  }
+}
+
+// Registration Page
+.form-container {
+  margin: 0.5rem auto 3rem;
+  max-width: 650px;
+  padding: 2rem 4rem;
+  border-radius: 5px;
+  .quick-authorization {
+    margin: 2.2rem 0 2.2rem;
+    text-align: center;
+    h2 {
+      margin: 1rem 0 2rem;
+    }
+    p {
+      font-size: 2rem;
+      font-weight: 500;
+      margin: 1rem 0;
+      color: #1c3674;
+    }
+    ul {
+      padding: 0 0;
+      li {
+        display: inline-block;
+        margin: 0 1rem;
+        a {
+          color: #2a4990;
+          font-size: 1.8rem;
+          font-weight: bold;
+        }
+        a:hover {
+          text-decoration: none;
+          color: #ff2856;
+        }
+      }
+    }
+  }
+  .form-control {
+    height: 40px;
+    font-size: 16px;
+  }
+  .form-label {
+    font-size: 1.8rem;
+  }
+  .form-check-box {
+    font-size: 1.6rem;
+  }
+  .form-submit-button {
+    font-size: 1.8rem;
+  }
+  .form-actions {
+    .row {
+      .sign-up-proposition {
+        margin: 1rem 0 0;
+        text-align: right;
+        a {
+          text-align: right;
+          font-size: 1.6rem;
+          color: #2a4990;
+        }
+        a:hover {
+          text-decoration: none;
+          color: #ff2856;
+        }
+      }
+
+    }
+  }
+}
+
+
+.user-image-in-header {
+  border-radius: 50px;
+  margin: 0 2rem;
 }

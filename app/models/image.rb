@@ -2,7 +2,7 @@ class Image < ActiveRecord::Base
   belongs_to :tour
   belongs_to :user
   has_attached_file :content,
-                    styles: { medium: '280x180#' },
+                    styles: { medium: '280x177#' },
                     storage: :s3,
                     bucket: ENV.fetch('S3_BUCKET_NAME'),
                     access_key_id: ENV.fetch('AWS_ACCESS_KEY_ID'),

@@ -1,26 +1,24 @@
 - @tours.each do |tour|
-  .row.tours-group
-    .col-md-5
+  .row.tours
+    .col-md-6
       = link_to(tour) do
-        %h2= truncate(tour.title, length: 70)
-      %p= truncate(simple_format(tour.description), escape: false, length: 200)
-      .row
-        .col-md-4
+        %h2= truncate(tour.title, length: 60)
+      %p= truncate(simple_format(tour.description), escape: false, length: 400)
+      .row.tour-footer
+        .col-md-4.tour-date
           %p
-            = tour.date
+            = link_to(tour) do
+              = tour.date
         .col-md-4
-          %p
+          %p.tour.tour-place
             = tour.place
-        .col-md-4
-          %ul.row-list.pull-left
-            %li
+        .col-md-4.tour-price
+          %p
+            = link_to(tour) do
               = tour.price
-            %li
               = tour.money
-      - if user_signed_in? && current_user.admin?
-        =link_to 'Delete', tour, method: :delete
-        =link_to 'Edit', edit_tour_path(tour)
-    .col-md-7
-      = image_tag tour.cover(:medium)
-
-= will_paginate @tours
+    .col-md-6
+      = link_to(tour) do
+        = image_tag tour.cover(:medium), class: 'tour-cover'
+.row.pag
+  = will_paginate @tours, :previous_label => '← Попередня', :next_label => 'Наступна →'

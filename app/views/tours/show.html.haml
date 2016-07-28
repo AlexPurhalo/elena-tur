@@ -1,50 +1,64 @@
-.row
-  .col-md-6
-    = image_tag @tour.cover.url(:large), class: 'tour-cover'
-    %h1= @tour.title
-    = simple_format(@tour.description)
-    %p= @tour.price
-    %p= @tour.date
-    =link_to 'Назад', tours_path
-    - if user_signed_in? && current_user.admin?
-      =link_to 'Delete', tour_path, method: :delete
-      =link_to 'Edit', edit_tour_path
+.one-tour-page
+  .row
+    .one-tour-additional-info
+      .col-md-4.first-column
+        = @tour.date
+      .col-md-4.second-column
+      .col-md-4.third-column
+        = @tour.price
+        = @tour.money
 
-  .col-md-6
-    .row.tour-images
-      = render @images
-    .row
-      .col-md-12
-        = will_paginate @images
-        - if user_signed_in? && current_user.admin?
-          = render 'images/form'
+  .row.tour-images
+    .col-md-6
+      = image_tag @tour.cover.url(:large), class: 'one-tour-cover'
+      %h1.one-tour-title= @tour.title
+      - if user_signed_in? && current_user.admin?
+        =link_to 'Delete', tour_path, method: :delete
+        =link_to 'Edit', edit_tour_path
 
-.row
-  .comment-section
+
+
+    .col-md-6
+      .row.tour-images
+        = render @images
+      .row
+        .col-md-12
+          .img-paginate
+            .pag
+              = will_paginate @images
+          - if user_signed_in? && current_user.admin?
+            = render 'images/form'
+  .row
     .col-md-12
-      %h2 Have the questions?
-      - if user_signed_in?
-        .comment-form
-          = render 'comments/form'
-      - else
-        .sign-in-proposition
-          %p
-            = link_to 'Sign In', new_user_session_path
-            |
-            = link_to 'Sign Up', new_user_registration_path
-            manually
-          %p  or with
-          %p
+      .description
+        = simple_format(@tour.description)
+
+
+  .row.comment-section
+    %div
+      .col-md-12
+        %h2 Є питання?
+        - if user_signed_in?
+          .comment-form
+            = render 'comments/form'
+        - else
+          .sign-in-proposition
+            = link_to 'Увійдіть', new_user_session_path
+            або
+            = link_to 'Зареєструйтесь', new_user_registration_path
             = link_to(user_omniauth_authorize_path(:vkontakte)) do
               = image_tag 'soc-auth-vk.png', width: '20px'
             |
             = link_to(user_omniauth_authorize_path(:facebook)) do
               = image_tag 'soc-auth-fb.png', width: '20px'
-          %p
-            to left a question
-      .comments-count
-        = pluralize(@tour.comments.count, 'Comment')
-      .comments-list
-        = render @comments
-        = will_paginate @comments
+            щоб залишити коментар
+
+        %h2 Список коментарів
+        - if @tour.comments.count >= 1
+          %ul= render @comments
+          = will_paginate @comments
+        - else
+          %p.empty-comment-list Ваш коментар з'явиться на цьому місці
+
+
 

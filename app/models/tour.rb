@@ -13,7 +13,7 @@ class Tour < ActiveRecord::Base
   end
   validates :cover, :title, :description, presence: true
   has_attached_file :cover,
-                    styles: { medium: '548x372#', thumb: '100x100>', large: '566x383#' },
+                    styles: { medium: '512x274#', thumb: '100x100>', large: '530x381#' },
                     storage: :s3,
                     bucket: ENV.fetch('S3_BUCKET_NAME'),
                     access_key_id: ENV.fetch('AWS_ACCESS_KEY_ID'),
