@@ -92,3 +92,11 @@ gem 'aws-sdk', '< 2.0'
 
 # Simple, Heroku-friendly Rails app configuration using ENV and a single YAML file
 gem 'figaro', '~> 1.1', '>= 1.1.1'
+
+# Provides object geocoding (by street or IP address), reverse geocoding (coordinates to street address),
+# distance queries for ActiveRecord and Mongoid, result caching, and more. Designed for Rails but works
+# with Sinatra and other Rack frameworks too.
+gem 'geocoder', '~> 1.3', '>= 1.3.7'
+
+# Enables easy Google map + overlays creation.
+gem 'gmaps4rails', '~> 2.1', '>= 2.1.2'

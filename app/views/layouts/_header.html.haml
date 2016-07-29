@@ -11,8 +11,11 @@
           - else
             = link_to 'Головна', root_path
         %li
-          %a
-            Контакти
+          - if current_page?(pages_contacts_path)
+            = link_to 'Контакти', pages_contacts_path, class: 'activated'
+          - else
+            = link_to 'Контакти', pages_contacts_path
+
 
       %ul.nav.navbar-nav.navbar-right
         - if user_signed_in? && current_user.admin?
@@ -23,7 +26,10 @@
           %li= link_to 'Налаштування', edit_user_registration_path
           %li= link_to 'Вийти', destroy_user_session_path, method: :delete
         - else
-          %li= link_to 'Увійти', new_user_session_path
+          - if current_page?(new_user_registration_path) || current_page?(new_user_session_path)
+            %li= link_to 'Увійти', new_user_session_path, class: 'activated'
+          - else
+            %li= link_to 'Увійти', new_user_session_path
           %li
             = link_to(user_omniauth_authorize_path(:facebook)) do
               = image_tag 'soc-auth-fb.png', class: 'soc-auth-image'

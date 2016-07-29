@@ -28,6 +28,7 @@ body {
 
 .container {
   max-width: 1400px;
+  margin: 0 auto;
 }
 
 .container-fluid {
@@ -673,3 +674,123 @@ nav {
   border-radius: 50px;
   margin: 0 2rem;
 }
+
+// Contact Page
+.contacts-page {
+  max-width: 800px;
+  text-align: center;
+  color: #777;
+  padding: 0 0;
+  margin: 0 auto;
+  .phone-addresses {
+    margin: 6.5rem 0 5rem;
+    h2 {
+      font-size: 2.5rem;
+      letter-spacing: 2.2px;
+      margin: 2rem 0;
+
+    }
+    p {
+      letter-spacing: 2px;
+      font-size: 1.8rem;
+      span {
+        margin: 0 1.5rem;
+      }
+    }
+    .kievstar {
+      color: #6f6fb6;
+    }
+    .kievstar:hover {
+      color: black;
+    }
+    .life {
+      color: #ea8989;
+    }
+    .life:hover {
+      color: black;
+    }
+    .office-phone-icon {
+      width: 30px;
+      height: 30px;
+      margin: 0 1.5rem 0;
+    }
+  }
+  .mail-address {
+    margin: 2rem 0 6rem;
+    h5 {
+      font-size: 2.1rem;
+      letter-spacing: 1.9px;
+    }
+    p {
+      font-size: 2rem;
+      .mail-icon {
+        width: 20px;
+        height: 20px;
+        margin: 0 1.4rem 0;
+      }
+    }
+  }
+  .office-location {
+    margin: 9rem 0 5rem;
+    h3 {
+      font-size: 1.9rem;
+      margin: 0 0 1.5rem;
+      .gmap-icon {
+       width: 17px;
+        height: 31px;
+        margin: 0 0 0 1rem;
+      }
+    }
+    #map {
+      text-align: center;
+      margin: 0 auto;
+    }
+    .contacts-map {
+      max-width: 800px;
+      height: 400px;
+    }
+  }
+  .office-work-time {
+
+  }
+  .work-time {
+    h4 {
+      font-size: 2rem;
+    }
+    p {
+      font-size: 1.8rem;
+    }
+  }
+  .coffee-break {
+    h5 {
+      font-size: 1.9rem;
+    }
+    p {
+      font-size: 1.8rem;
+    }
+  }
+  .office-location-images {
+    margin: 8rem 0 4rem;
+    h4 {
+      font-size: 1.8rem;
+    }
+    .office-image {
+      width: 800px;
+      height: 400px;
+      margin: 1rem 0;
+    }
+    @media(max-width: 1000px) {
+      .office-image {
+        width: 400px;
+        height: 200px;
+      }
+    }
+    @media(max-width: 500px) {
+      .office-image {
+        width: 200px;
+        height: 100px;
+      }
+    }
+  }
+}
+
