@@ -6,7 +6,7 @@ class PagesController < ApplicationController
       marker.lng location.longitude
       marker.infowindow location.title
       marker.picture({
-                         "url": 'http://pokefarm.wiki/images/6/61/Pok%C3%A9mon_Cosplay_Pikachu.png',
+                         # "url": 'http://pokefarm.wiki/images/6/61/Pok%C3%A9mon_Cosplay_Pikachu.png',
                          "width":  48,
                          "height": 48
                      })

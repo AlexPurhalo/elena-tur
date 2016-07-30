@@ -13,4 +13,6 @@ class ApplicationController < ActionController::Base
                :password, :password_confirmation, :current_password)
     end
   end
+
+  config.relative_url_root = ""
 end
