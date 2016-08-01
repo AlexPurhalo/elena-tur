@@ -18,6 +18,18 @@
 
 
       %ul.nav.navbar-nav.navbar-right
+        %li.contact-info-on-header
+          %p
+            Замовлення туру по телефону
+            %ul
+              %li
+                %p 067-50-95-100
+              %li
+                %p
+                  |
+              %li
+                %p 063-36-27-885
+
         - if user_signed_in? && current_user.admin?
           %li= link_to 'Створити', new_tour_path
           %li= link_to 'Вийти', destroy_user_session_path, method: :delete
